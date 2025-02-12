@@ -1,8 +1,5 @@
 public class LibraryManagementSystem {
     public static void main(String[] args) {
-        // Test the classes
-        Book book = new Book("Tologon Kasymbekov", "Broken sword", 1986);
-        book.printBookInfo();
 
         Ebook ebook = new Ebook("PDF", 5.5, "Delbirim", "Aitmatov", 1997);
         ebook.printBookInfo();
@@ -14,9 +11,9 @@ public class LibraryManagementSystem {
     }
 
     public static class Book {
-        protected String title;
-        protected String author;
-        protected int published;
+         String title;
+         String author;
+         int published;
 
         public Book(String author, String title, int published) {
             this.author = author;
@@ -34,8 +31,9 @@ public class LibraryManagementSystem {
     }
 
     public static class Ebook extends Book {
-        private String fileFormat;
-        private double fileSizeMB;
+         String fileFormat;
+         double fileSizeMB;
+         double price = 100;
 
         public Ebook(String fileFormat, double fileSizeMB, String title, String author, int published) {
             super(author, title, published);
@@ -46,13 +44,13 @@ public class LibraryManagementSystem {
         @Override
         public void printBookInfo() {
             System.out.println("Author: " + author + ", Title: " + title + ", File Format: " + fileFormat +
-                    ", File Size: " + fileSizeMB + " MB, Published: " + published);
+                    ", File Size: " + fileSizeMB + " MB, Published: " + published+" price"+" "+price*fileSizeMB);
         }
 
         @Override
         public String getBookInfo() {
             return "Author: " + author + ", Title: " + title + ", File Format: " + fileFormat +
-                    ", File Size: " + fileSizeMB + " MB, Published: " + published;
+                    ", File Size: " + fileSizeMB + " MB, Published: " + published+" price"+" "+price*fileSizeMB;
         }
 
         public void bookType() {
@@ -61,9 +59,9 @@ public class LibraryManagementSystem {
     }
 
     public static class PrintedBook extends Book {
-        private int numberOfPages;
-        private String publisher;
-
+         int numberOfPages;
+         String publisher;
+         double price = 1;
         public PrintedBook(int numberOfPages, String publisher, String title, String author, int published) {
             super(author, title, published);
             this.numberOfPages = numberOfPages;
@@ -73,13 +71,16 @@ public class LibraryManagementSystem {
         @Override
         public void printBookInfo() {
             System.out.println("Author: " + author + ", Title: " + title + ", Publisher: " + publisher +
-                    ", Number of Pages: " + numberOfPages + ", Published: " + published);
+                    ", Number of Pages: " + numberOfPages + ", Published: " + published+" price"+" "+price*numberOfPages);
         }
 
         @Override
         public String getBookInfo() {
             return "Author: " + author + ", Title: " + title + ", Publisher: " + publisher +
-                    ", Number of Pages: " + numberOfPages + ", Published: " + published;
+                    ", Number of Pages: " + numberOfPages + ", Published: " + published+" price"+" "+price*numberOfPages;
+        }
+        public void printBook(){
+            System.out.println("Book is printing....");
         }
 
         public void bookType() {
