@@ -83,7 +83,7 @@ public class StudentmanagmentClass {
 
         HashSet<String> courses1 = new HashSet<>(Arrays.asList("Math", "Physics"));
 
-        Student student1 = new Student(1,18,"Kanybek")
+        Student student1 = new Student(1,18,"Kanybek");
 
         student1.courses.addAll(courses1);
 
