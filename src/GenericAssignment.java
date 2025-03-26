@@ -14,7 +14,9 @@ public class GenericAssignment {
                 System.out.println(item);
             }
         }
-
+        public void size(){
+            System.out.println(arrayList);
+        }
         public String toString() {
             return " array"+ arrayList;
         }
